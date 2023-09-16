@@ -1,0 +1,760 @@
+@import url("reset.css");
+
+/* =====共用模組區===== */
+body,
+html {
+    /* scroll-behavior: smooth; */
+}
+
+html {
+    --primary-color: #E0DA70;
+    --secodary-color: #65BBB1;
+    --black-color: #2B1A1A;
+    --title-color: #304D62;
+    --main-width: 62.5vw;
+    --main-maxwidth: 1200px;
+    --mini-width: 350px;
+    --bg-color: #FCF8EC;
+}
+
+body {
+    background-color: #FCF8EC;
+    font-family: Arial, 'Noto Sans TC', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+
+}
+
+a:hover {
+    cursor: url("../imges/point.png") 10 5, move;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.t32 {
+    font-size: 32px;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    font-weight: bold;
+}
+
+.t24 {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: .2em;
+}
+
+.t20 {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: .2em;
+}
+
+.t18 {
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: .2em;
+}
+
+.t16 {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: .2em;
+}
+
+.t12 {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: .1em;
+}
+
+
+
+
+
+
+
+
+/* =========================共用圖文標題 ========================*/
+.titlebox {
+    /* background-color: darkcyan; */
+    margin: 0 auto;
+    padding: 25px;
+
+}
+
+.title_colorpic {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.titlebox>h1 {
+    /* font-weight: bolder; */
+    /* font-weight: 700; */
+    font-weight: bold;
+    text-shadow: 0px 4px 1px var(--primary-color);
+    white-space: nowrap;
+    font-size: 36px;
+
+}
+
+.titlebox>h1::after {
+    content: "";
+    display: block;
+    background-color: var(--primary-color);
+    width: 42px;
+    height: 4px;
+    margin: 20px auto 0;
+}
+
+
+/* =====共用模組區END===== */
+
+
+
+/* 上方選單 */
+header {
+    /* background-color: #ce302c; */
+    background-color: #FCF8EC;
+    display: grid;
+    padding: 0px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    z-index: 99;
+
+}
+
+/* 選單左 */
+header .logo {
+    width: 100px;
+    margin-left: 5%;
+}
+
+header .logo img {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+
+}
+
+/* 選單右 */
+header .nav {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: flex-end;
+    /* margin-right: 5%; */
+}
+
+header .nav li {
+    position: relative;
+    width: 120px;
+    /* width: 120%; */
+}
+
+header .nav li:first-child {
+    /* margin-right: 30px; */
+    margin-right: 3%;
+}
+
+header .nav>li>a {
+    /* text-decoration: none; */
+    text-transform: capitalize;
+    padding: 10px 15px;
+    color: var(--black-color);
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+header .nav>li>a .fa-caret-down {
+    margin-left: 8px;
+}
+
+header .nav>li>a .fa-caret-up {
+    margin: 5px 5px 0;
+    color: var(--title-color);
+    display: none;
+}
+
+header .nav>.nav-item:nth-last-child(-n+2) {
+    width: 8%;
+}
+
+/* 收藏 */
+header .nav .nav-item:nth-last-child(2) a img {
+    width: 30px;
+}
+
+header .nav .nav-item:nth-last-child(2) a {
+    padding-bottom: 0;
+}
+
+/* 地圖 */
+header .nav .nav-item:last-child a i {
+    font-size: 25px;
+}
+
+
+/* 指向動態 */
+header .nav li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    /* background: #eadcdc; */
+    background: var(--secodary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+header .nav li:hover::after {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+/* ------------- 子選單 ------------- */
+header .nav ol {
+    position: absolute;
+    background-color: var(--primary-color);
+    /* background-color: #fff; */
+    display: none;
+    z-index: 50;
+}
+
+
+.nav .nav-item>ol>li>a {
+    line-height: 40px;
+    color: var(--title-color);
+
+}
+
+/* ------------- hover & show ------------- */
+
+header .nav>li:hover>a .fa-caret-down {
+    display: none;
+}
+
+header .nav>li:hover>a .fa-caret-up {
+    display: block;
+}
+
+
+.nav .nav-item:hover ol {
+    display: inline-block;
+}
+
+.nav .nav-item>ol>li>a:hover {
+    /* background-color: #999; */
+}
+
+/* 漢堡 */
+.menu-toggle {
+    display: none;
+    padding: 1em;
+    position: absolute;
+    top: 1rem;
+    right: 0.5em;
+    /* cursor: pointer; */
+    cursor: url("../imges/point.png") 10 5, move;
+    grid-area: menu;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    display: block;
+    /* background: #ebebd3; */
+    background: var(--title-color);
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+.open .hamburger {
+    transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+    opacity: 0;
+}
+
+.open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+}
+
+
+
+
+
+
+
+/* ==========主區塊規格========== */
+main {
+    /* background-color: chartreuse; */
+    max-width: var(--main-maxwidth);
+    min-width: var(--mini-width);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+/* ==========內文頁首========= */
+.main_top {
+    width: 100%;
+}
+
+/* 內文頁首標題 */
+.main_top>h1 {
+    /* background-color: #304D62; */
+    color: var(--black-color);
+}
+
+/* 內文頁首分頁選單 */
+.main_top>ul {
+    background-color: #FCF8EC;
+    /* background-color: #65BBB1; */
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 18px;
+    z-index: 20;
+}
+
+.main_top>ul::before {
+    content: "";
+    display: block;
+    width: 98vw;
+    background-color: #FCF8EC;
+    height: calc(100% + 14px);
+    /* background-color: red; */
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.main_top>ul::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 12px;
+    background-color: #FCF8EC;
+    border-bottom: 2px solid #ccc;
+    position: absolute;
+    bottom: -14px;
+}
+
+.main_top>ul li a {
+    /* background-color: #E0DA70; */
+    display: block;
+    padding: 7px;
+    border: 3px solid transparent;
+    color: var(--black-color);
+    white-space: nowrap;
+}
+
+
+.main_top li a:hover {
+    /* background-color: #E0DA70; */
+    border-bottom: 3px dotted var(--primary-color);
+    transition: .2s;
+}
+
+
+
+
+
+
+/* ==========頁碼========= */
+.page_box {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page_box #pagination a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 4px;
+    margin: 0 3px;
+    background-color: var(--black-color);
+    color: #eee;
+    /* font-family: Courier; */
+    font-family: Lucida Console;
+}
+
+
+#pagination a:hover {
+    background-color: var(--title-color);
+    /* cursor: pointer; */
+}
+
+
+#pagination a.current {
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
+}
+
+#pagination i {
+    font-size: 20px;
+
+}
+
+
+/* ==========頁尾========== */
+footer {
+    /* width: var(--main-width); */
+    width: 100%;
+    background-color: var(--secodary-color);
+    border-radius: 80px 80px 0 0;
+    min-width: var(--mini-width);
+    padding: 50px 0 20px;
+    margin: 0 auto;
+    /* position: absolute; */
+    /* bottom: 0; */
+}
+
+/* 選單 */
+footer .footerbox {
+    /* background-color: #fff; */
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 14%) 40%;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 0 10px;
+    margin-bottom: 20px;
+}
+
+footer .footerbox>li {
+    /* background-color: pink; */
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+footer .footerbox>li a {
+    display: block;
+    border-bottom: 5px solid transparent;
+    color: var(--title-color);
+    white-space: nowrap;
+    font-weight: bold;
+
+}
+
+footer a:hover {
+    border-bottom: 5px dotted var(--primary-color);
+    transition: .2s;
+}
+
+footer .footerbox .text_b {
+    /* background-color: #E0DA70; */
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+footer .footerbox .text_b h5 {
+    /* background-color: aqua; */
+    /* letter-spacing: 0em; */
+    padding-left: 5px;
+}
+
+footer .footerbox .icon {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    /* background-color: #304D62; */
+}
+
+footer .footerbox .icon>img {
+    display: block;
+    height: 100%;
+}
+
+footer .footerbox .phone h5 {
+    /* background-color: cadetblue; */
+    letter-spacing: .3em;
+}
+
+footer .footerbox .phone .icon>img {
+    transform: translateX(-50%);
+}
+
+footer>p {
+    color: var(--black-color);
+    padding: 0 5%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+
+/* ==========右下大白熊狗TOP========== */
+
+.top_button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #fff;
+    width: 5vw;
+    min-width: 60px;
+    height: 5vw;
+    min-height: 60px;
+    border-radius: 20%;
+    opacity: .5;
+    box-shadow: 0px 0px 10px gray;
+    z-index: 30;
+    transition: 0.3s ease; /* 添加透明度變化的動畫效果 */
+}
+
+.top_button img {
+    display: block;
+    margin: 0 auto;
+    width: 65%;
+    transform: translateY(20%);
+}
+
+.top_button:hover {
+    opacity: 1;
+}
+
+/* 定義透明度變化的動畫效果 */
+@keyframes fadeAnimation {
+    0% { opacity: .5; }
+    50% { opacity: 1; }
+    100% { opacity: .5; }
+}
+
+/* 當畫面不在網頁最頂端時，套用透明度變化的動畫 */
+.top_button.scroll-animation {
+    animation: fadeAnimation 2s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================RWD================================ */
+@media all and (max-width: 1200px) {
+    main {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .main_top>ul {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    /* 字體 */
+    .t32{
+        font-size: 24px;
+    }
+    .t24 {
+        font-size: 20px;
+        letter-spacing: .1em;
+    }
+
+    .t20 {
+        font-size: 18px;
+        letter-spacing: .1em;
+    }
+
+    .t18 {
+        font-size: 16px;
+        letter-spacing: .1em;
+    }
+
+    .t16 {
+        font-size: 14px;
+        letter-spacing: .1em;
+
+    }
+
+    /* 上方選單 */
+    header {
+        justify-items: center;
+    }
+
+    .nav {
+        padding: 0;
+        margin: 0;
+        background-color: var(--secodary-color);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        width: 100%;
+        height: calc(100vh - 100px);
+        transition: all 500ms ease-in-out;
+        clip-path: circle(0px at top right);
+        justify-content: center !important;
+        z-index: 50;
+        border-radius: 40px;
+    }
+
+    .nav li {
+        padding: 20px 0px;
+    }
+
+    .nav>li:last-child {
+        display: none;
+    }
+
+    .nav>li>a {
+        font-size: 20px;
+    }
+
+    .nav>li>ol a {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .nav li::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background: #eadcdc;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .main_top li a:hover {
+        border: none;
+
+    }
+
+    .nav li:hover::after {
+        /* width: 100%; */
+    }
+
+    .mobile-nav {
+        clip-path: circle(250% at top right);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header .nav>li:nth-last-child(-n + 2) a {
+        padding: 10px 0;
+    }
+
+    header .nav ol {
+        border-radius: 10px;
+    }
+
+
+    /* ===========共用圖文標題===========*/
+    .title_colorpic {
+        width: 30px;
+        margin-bottom: 10px;
+    }
+
+    .titlebox>h1 {
+        text-shadow: 0px 4px 1px var(--primary-color);
+        font-size: 26px;
+
+    }
+
+    .titlebox>h1::after {
+        content: "";
+        display: block;
+        background-color: var(--primary-color);
+        width: 42px;
+        height: 4px;
+        margin: 10px auto 0;
+    }
+
+    /* 頁中小選單 */
+
+
+
+    /* 右下大白熊狗TOP */
+    .top_button {
+        /* width: 60px; */
+        /* height: 60px; */
+    }
+
+
+
+    /* 頁尾 */
+    footer {
+        /* margin: 0 auto; */
+        width: 100%;
+    }
+
+    footer .footerbox {
+        display: none;
+    }
+
+    footer > p {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media all and (max-width: 428px) {
+    .t20 {
+        font-size: 16px;
+        letter-spacing: .05em;
+    }
+
+}

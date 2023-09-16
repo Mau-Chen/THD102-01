@@ -1,0 +1,332 @@
+@import url("reset.css");
+@import url("all.css");
+
+/* ==========小標題========= */
+#about_topkey .main_top>ul li .-on {
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+
+/* ==========內容========= */
+.about_box {
+    /* background-color: aqua; */
+    width: 100%;
+    min-width: var(--mini-width);
+    margin: 0 auto;
+}
+
+/* ==========開場白========= */
+.about_box .slogan {
+    /* background-color: crimson; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    /* padding-bottom: 80px; */
+}
+
+.about_box .slogan img {
+    display: block;
+    width: 40%;
+}
+
+.about_box .slogan .text {
+    /* background-color: burlywood; */
+    width: 60%;
+    flex-grow: 1;
+    padding: 3%;
+}
+
+.slogan .text p {
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: .15em;
+    line-height: 1.5;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+/* ==========介紹詞========= */
+#anchor1 {
+    /* background-color: aquamarine; */
+    width: 100%;
+    height: 160px;
+}
+#anchor2{
+    /* background-color: aquamarine; */
+    height: 40px;
+    width: 1px;
+}
+
+.understand {
+    /* margin-top: 31vh; */
+    /* background-color: darkcyan; */
+    position: relative;
+    padding: 5%;
+
+
+}
+
+.understand::after {
+    content: "";
+    display: block;
+    width: 98vw;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    border-top-left-radius: 20px;
+    z-index: -1;
+}
+
+
+
+
+/* 了解標題 */
+main .understand .titlebox {
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    transform: translateY(-62%);
+}
+
+
+main .understand .titlebox>h1 {
+    text-shadow: 0px 4px 1px var(--secodary-color);
+}
+
+main .understand .titlebox>h1::after {
+    background-color: var(--secodary-color);
+}
+
+
+
+/* 了解內文 */
+.understand .inner {
+    /* background-color: aqua; */
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.understand .inner>.text {
+    width: 43%;
+    box-sizing: border-box;
+    /* padding: 20px; */
+    /* flex-basis: 500px; */
+    flex-grow: 1;
+
+}
+
+.understand .inner p {
+    color: var(--black-color);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.understand .inner>img {
+    /* background-color: aqua; */
+    width: 57%;
+    padding: 2%;
+}
+
+/* ==========時間線========= */
+.timelinebox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.timelinebox .titlebox2>img {
+    /* background-color: #E27D60; */
+    display: block;
+    margin: 0 auto;
+}
+
+.timelinebox .titlebox2>h1 {
+    padding-top: 20px;
+    text-align: center;
+    text-shadow: 0px 4px 1px var(--primary-color);
+    white-space: nowrap;
+}
+
+.timelinebox .titlebox2>h1::after {
+    content: "";
+    display: block;
+    background-color: var(--primary-color);
+    width: 42px;
+    height: 6px;
+    margin: 15px auto;
+}
+
+
+
+.timelinebox .time_pic {
+    display: block;
+    width: 100%;
+    /* background-color: #FDF7EC; */
+    object-position: center center;
+    padding: 40px 0;
+}
+
+.timelinebox .timecolumn_pic {
+    display: none;
+}
+
+/* ==========地址電話交通資訊=========  */
+.find_us {
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0 100px;
+}
+
+.find_us .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.find_us .text .text_a {
+    /* background-color: aqua; */
+}
+
+.find_us .text .text_b {
+    /* background-color: blue; */
+}
+
+.find_us .text h3 {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: var(--title-color);
+}
+
+.find_us .text h6 {
+    margin-bottom: 10px;
+    color: var(--black-color);
+    /* line-height: 1.5; */
+}
+
+
+
+.find_us .map {
+    flex-basis: 300px;
+    flex-grow: 0;
+}
+
+
+
+
+
+
+/* =================RWD================================ */
+@media all and (max-width: 767px) {
+
+    header .nav>li>a>i {
+        display: block;
+    }
+
+    /* ==========介紹詞========= */
+    .about_box .slogan {
+        flex-direction: column;
+    }
+
+    .about_box .slogan img {
+        width: 60%;
+    }
+
+    .about_box .slogan .text {
+        width: 85%;
+    }
+
+    /* 了解內文 */
+    main .understand .titlebox {
+        left: 50%;
+        transform: translate(-50%, -62%);
+    }
+
+    .understand .inner {
+        flex-direction: column;
+    }
+
+    .understand .inner>img {
+        order: 1;
+        width: 100%;
+    }
+
+    .understand .inner>.text {
+        order: 2;
+        width: 85%;
+    }
+
+    /* ==========時間線========= */
+    .timelinebox .time_pic {
+        display: none;
+    }
+
+    .timelinebox .timecolumn_pic {
+        padding: 40px 0;
+        display: block;
+        margin: 0 auto;
+        object-position: center center;
+        width: 80%;
+    }
+
+    /* ==========地址電話交通資訊=========  */
+    .find_us {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .find_us .text {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .find_us .text .text_a {
+        margin-bottom: 40px;
+    }
+
+    .find_us .map {
+        width: 80%;
+    }
+
+    .find_us .map iframe {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 428px) {
+
+    /* ==========介紹詞========= */
+    .about_box .slogan .text {
+        width: 100%;
+        height: 50%;
+    }
+
+    /* 了解內文 */
+    .understand .inner>img {
+        width: 100%;
+    }
+
+    .understand .inner>.text {
+        width: 100%;
+    }
+
+    .t20 {
+        font-size: 16px;
+    }
+}

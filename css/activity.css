@@ -1,0 +1,161 @@
+@import url("reset.css");
+@import url("all.css");
+
+/* ==========總表頭========== */
+nav {
+    background-color: #FCF8EC;
+}
+
+/* ==========小標題========= */
+.main_top>ul li:nth-child(2)>a {
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* ==========頁尾========= */
+
+.page_box {
+    /* background-color: aquamarine; */
+    width: 100%;
+    height: 150px;
+    margin-top: 1%;
+    align-items: flex-start;
+    position: relative;
+}
+
+.page_box .pagination {
+    margin: 0 auto;
+}
+
+.page_box .activityfox {
+    /* background-color: darkblue; */
+    max-width: 230px;
+    width: 16vw;
+    min-width: 120px;
+    position: absolute;
+    left: 75%;
+    bottom: 0;
+    z-index: 10;
+}
+
+
+
+/* ==========右邊內容========= */
+.partycard_box {
+    /* background-color: aqua; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+}
+
+/* 活動卡 */
+.partycard_box .party_card {
+    margin: 3% 0;
+    width: 47%;
+    background-color: #fff;
+
+}
+
+.partycard_box .party_card .party_block {
+    /* background-color: aquamarine; */
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.party_card>a:active,
+.party_card>a:visited {
+    color: var(--black-color);
+
+}
+
+.party_block .pic {
+    /* background-color: pink; */
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.party_block .pic img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    object-fit: cover;
+    z-index: 3;
+}
+
+.party_block .pic .date {
+    background-color: #fff;
+    padding: 1.5% 1%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px 0 0;
+    z-index: 3;
+
+}
+
+.party_text {
+    /* background-color: #E0DA70; */
+    width: 40%;
+    padding-top: 5px;
+    width: 100%;
+    /* flex-grow: 1; */
+
+}
+
+.party_text h3 {
+    display: block;
+    width: 95%;
+    text-align: left;
+    color: var(--secodary-color);
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.party_text p {
+    /* width: 95%; */
+    color: var(--black-color);
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.party_block .date p {
+    line-height: 10%;
+    padding: 10px;
+    font-weight: 600;
+    font-family: "MS Sans Serif";
+    color: var(--black-color);
+}
+
+/* ===============RWD======================= */
+@media screen and (max-width: 1200px) {}
+
+@media all and (max-width: 768px) {
+    .page_box .activityfox {
+        width: 80px;
+        bottom: -1px;
+    }
+
+    .main_top .partycard_box {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .main_top .partycard_box .party_card {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 428px) {}
